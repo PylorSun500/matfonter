@@ -5,14 +5,16 @@ from matplotlib import font_manager
 
 
 def matfonter(path_to_ttf, unicode_minus=False):
-    """Load a TTF font file into matplotlib and apply it globally."""
+    """Load a TTF or OTF font file into matplotlib and apply it globally."""
     font_path = Path(path_to_ttf).expanduser().resolve()
 
     if not font_path.is_file():
-        raise FileNotFoundError(f"TTF file not found: {font_path}")
+        raise FileNotFoundError(f"Font file not found: {font_path}")
 
-    if font_path.suffix.lower() != ".ttf":
-        raise ValueError(f"Expected a .ttf file, got: {font_path.suffix}")
+    if font_path.suffix.lower() not in {".ttf", ".otf"}:
+        raise ValueError(
+            f"Expected a .ttf or .otf file, got: {font_path.suffix}"
+        )
 
     font_manager.fontManager.addfont(str(font_path))
     font_name = font_manager.FontProperties(fname=str(font_path)).get_name()

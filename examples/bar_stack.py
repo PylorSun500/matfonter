@@ -1,8 +1,19 @@
+import sys
+from pathlib import Path
+
 import matplotlib.pyplot as plt
-import matfonter as mf
 import numpy as np
-import pandas as pd
-mf.matfonter('/Users/pylorsun/Documents/Study/2025-2026第二学期/PythonData/Assets/FontSourcesMacOS/CN_SF_Long_Cang/LongCang-Regular.ttf')
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+import matfonter as mf
+
+# Recommended CJK example font:
+# Source Han Sans SC Heavy (SIL OFL 1.1)
+# https://github.com/adobe-fonts/source-han-sans
+mf.matfonter(PROJECT_ROOT / "third_party/fonts/SourceHanSansCN-Heavy.otf")
 
 y1 = np.array([12, 5, 15, 10, 6])
 y2 = [6, 8, 16, 11, 7]
