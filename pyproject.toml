@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
 authors = [
-  { name = "pylorsun" }
+  { name = "pylorsun", email="pylorsun500@outlook.com" }
 ]
 dependencies = [
   "matplotlib>=3.7"
@@ -21,15 +21,18 @@ classifiers = [
   "Intended Audience :: Developers",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
   "Topic :: Scientific/Engineering :: Visualization"
+  "Framework :: Matplotlib"
+  "License :: OSI Approved :: MIT License"
 ]
 license-files = ["LICENSE"]
 
 [tool.setuptools]
 packages = ["matfonter"]
+
+[project.urls]
+GitHub = "https://github.com/PylorSun500/matfonter"
+Issue = "https://github.com/PylorSun500/matfonter/issues"
